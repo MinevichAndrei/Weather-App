@@ -1,8 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:weather_app/api/weather_api.dart';
+import 'package:weather_app/models/geo_coordinates.dart';
 import 'package:weather_app/models/weather_forecast_daily.dart';
 
 class WeatherForecastScreen extends StatefulWidget {
@@ -14,6 +13,8 @@ class WeatherForecastScreen extends StatefulWidget {
 
 class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
   late Future<WeatherForecast> forecastObject;
+  late Future<GeoCoordinates> geo;
+
   final String _cityName = 'London';
 
   @override
@@ -60,7 +61,7 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
                 }
               },
             ),
-          )
+          ),
         ],
       ),
     );

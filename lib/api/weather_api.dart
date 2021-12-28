@@ -10,20 +10,17 @@ class WeatherApi {
   Future<WeatherForecast> fetchWeatherForecastWithCity(
       {required String cityName}) async {
     var queryParameters = {
-      'APPID': Constants.weatherApiKey,
+      'appid': Constants.weatherApiKey,
+      'exclude': 'hourly,minutely',
       'units': 'metric',
-      'lat': 51.508,
-      'lon': -0.1257,
+      'lat': '51.508',
+      'lon': '-0.1257',
     };
 
     var uri = Uri.https(Constants.weatherBaseUrlDomain,
         Constants.weatherForecastPath, queryParameters);
 
-    log('request: ${uri.toString()}');
-
     var response = await http.get(uri);
-
-    print('response: ${response.body}');
 
     if (response.statusCode == 200) {
       return WeatherForecast.fromJson(json.decode(response.body));

@@ -15,8 +15,8 @@ class WeatherForecast {
   late final List<Daily> daily;
 
   WeatherForecast.fromJson(Map<String, dynamic> json) {
-    lat = json['lat'].toDouble;
-    lon = json['lon'].toDouble;
+    lat = json['lat'].toDouble();
+    lon = json['lon'].toDouble();
     timezone = json['timezone'];
     timezoneOffset = json['timezone_offset'];
     current = Current.fromJson(json['current']);
@@ -73,17 +73,17 @@ class Current {
     dt = json['dt'];
     sunrise = json['sunrise'];
     sunset = json['sunset'];
-    temp = json['temp'].toDouble;
-    feelsLike = json['feels_like'].toDouble;
+    temp = json['temp'].toDouble();
+    feelsLike = json['feels_like'].toDouble();
     pressure = json['pressure'];
     humidity = json['humidity'];
-    dewPoint = json['dew_point'].toDouble;
+    dewPoint = json['dew_point'].toDouble();
     uvi = json['uvi'];
     clouds = json['clouds'];
     visibility = json['visibility'];
-    windSpeed = json['wind_speed'].toDouble;
+    windSpeed = json['wind_speed'].toDouble();
     windDeg = json['wind_deg'];
-    windGust = json['wind_gust'].toDouble;
+    windGust = json['wind_gust'].toDouble();
     weather =
         List.from(json['weather']).map((e) => Weather.fromJson(e)).toList();
   }
@@ -184,20 +184,20 @@ class Daily {
     sunset = json['sunset'];
     moonrise = json['moonrise'];
     moonset = json['moonset'];
-    moonPhase = json['moon_phase'].toDouble;
+    moonPhase = json['moon_phase'].toDouble();
     temp = Temp.fromJson(json['temp']);
     feelsLike = FeelsLike.fromJson(json['feels_like']);
     pressure = json['pressure'];
     humidity = json['humidity'];
-    dewPoint = json['dew_point'].toDouble;
-    windSpeed = json['wind_speed'].toDouble;
+    dewPoint = json['dew_point'].toDouble();
+    windSpeed = json['wind_speed'].toDouble();
     windDeg = json['wind_deg'];
-    windGust = json['wind_gust'].toDouble;
+    windGust = json['wind_gust'].toDouble();
     weather =
         List.from(json['weather']).map((e) => Weather.fromJson(e)).toList();
     clouds = json['clouds'];
-    pop = json['pop'].toDouble;
-    uvi = json['uvi'].toDouble;
+    pop = json['pop'].toDouble();
+    uvi = json['uvi'].toDouble();
   }
 
   Map<String, dynamic> toJson() {
@@ -241,12 +241,12 @@ class Temp {
   late final double morn;
 
   Temp.fromJson(Map<String, dynamic> json) {
-    day = json['day'].toDouble;
-    min = json['min'].toDouble;
-    max = json['max'].toDouble;
-    night = json['night'].toDouble;
-    eve = json['eve'].toDouble;
-    morn = json['morn'].toDouble;
+    day = json['day'].toDouble();
+    min = json['min'].toDouble();
+    max = json['max'].toDouble();
+    night = json['night'].toDouble();
+    eve = json['eve'].toDouble();
+    morn = json['morn'].toDouble();
   }
 
   Map<String, dynamic> toJson() {
@@ -274,10 +274,10 @@ class FeelsLike {
   late final double morn;
 
   FeelsLike.fromJson(Map<String, dynamic> json) {
-    day = json['day'].toDouble;
-    night = json['night'].toDouble;
-    eve = json['eve'].toDouble;
-    morn = json['morn'].toDouble;
+    day = json['day'].toDouble();
+    night = json['night'].toDouble();
+    eve = json['eve'].toDouble();
+    morn = json['morn'].toDouble();
   }
 
   Map<String, dynamic> toJson() {

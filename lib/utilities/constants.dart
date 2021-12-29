@@ -1,5 +1,7 @@
+import 'package:weather_app/utilities/api_key.dart';
+
 class Constants {
-  static const String weatherApiKey = 'd60d88a5884b3e3fac5c82b039ca5d55';
+  static const String weatherApiKey = ApiKey.apiKey;
   static const String weatherBaseScheme = 'https://';
   static const String weatherBaseUrlDomain = 'api.openweathermap.org';
   static const String weatherForecastPath = '/data/2.5/onecall';

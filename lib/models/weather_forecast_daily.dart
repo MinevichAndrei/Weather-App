@@ -50,7 +50,6 @@ class Current {
     required this.visibility,
     required this.windSpeed,
     required this.windDeg,
-    required this.windGust,
     required this.weather,
   });
   late final int dt;
@@ -66,7 +65,6 @@ class Current {
   late final int visibility;
   late final double windSpeed;
   late final int windDeg;
-  late final double windGust;
   late final List<Weather> weather;
 
   Current.fromJson(Map<String, dynamic> json) {
@@ -83,7 +81,6 @@ class Current {
     visibility = json['visibility'];
     windSpeed = json['wind_speed'].toDouble();
     windDeg = json['wind_deg'];
-    windGust = json['wind_gust'].toDouble();
     weather =
         List.from(json['weather']).map((e) => Weather.fromJson(e)).toList();
   }
@@ -103,7 +100,6 @@ class Current {
     _data['visibility'] = visibility;
     _data['wind_speed'] = windSpeed;
     _data['wind_deg'] = windDeg;
-    _data['wind_gust'] = windGust;
     _data['weather'] = weather.map((e) => e.toJson()).toList();
     return _data;
   }

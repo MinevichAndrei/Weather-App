@@ -27,6 +27,7 @@ class WeatherApi {
       'appid': Constants.weatherApiKey,
       'exclude': 'hourly,minutely',
       'units': 'metric',
+      'lang': 'ru',
       'lat': result['coord']['lat'].toString(),
       'lon': result['coord']['lon'].toString(),
     };

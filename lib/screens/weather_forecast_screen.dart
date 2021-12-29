@@ -1,9 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:weather_app/api/weather_api.dart';
+import 'package:weather_app/models/geo_coordinates.dart';
 import 'package:weather_app/models/weather_forecast_daily.dart';
+import 'package:weather_app/widgets/city_view.dart';
 
 class WeatherForecastScreen extends StatefulWidget {
   const WeatherForecastScreen({Key? key}) : super(key: key);
@@ -14,6 +14,8 @@ class WeatherForecastScreen extends StatefulWidget {
 
 class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
   late Future<WeatherForecast> forecastObject;
+  late Future<GeoCoordinates> geo;
+
   final String _cityName = 'London';
 
   @override
@@ -43,24 +45,28 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
       ),
       body: ListView(
         children: [
-          Container(
-            child: FutureBuilder<WeatherForecast>(
-              future: forecastObject,
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  return Text('All good',
-                      style: Theme.of(context).textTheme.headline3);
-                } else {
-                  return const Center(
-                    child: SpinKitDoubleBounce(
-                      color: Colors.lightBlue,
-                      size: 100.0,
+          FutureBuilder<WeatherForecast>(
+            future: forecastObject,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Column(
+                  children: [
+                    const SizedBox(
+                      height: 50.0,
                     ),
-                  );
-                }
-              },
-            ),
-          )
+                    CityView(snapshot: snapshot),
+                  ],
+                );
+              } else {
+                return const Center(
+                  child: SpinKitDoubleBounce(
+                    color: Colors.lightBlue,
+                    size: 100.0,
+                  ),
+                );
+              }
+            },
+          ),
         ],
       ),
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:weather_app/api/weather_api.dart';
 import 'package:weather_app/models/weather_forecast_daily.dart';
+import 'package:weather_app/widgets/bottom_list_view.dart';
 import 'package:weather_app/widgets/city_view.dart';
 import 'package:weather_app/widgets/detail_view.dart';
 import 'package:weather_app/widgets/temp_view.dart';
@@ -52,7 +53,7 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
                 return Column(
                   children: [
                     const SizedBox(
-                      height: 50.0,
+                      height: 30.0,
                     ),
                     CityView(snapshot: snapshot),
                     const SizedBox(
@@ -60,9 +61,13 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
                     ),
                     TempView(snapshot: snapshot),
                     const SizedBox(
-                      height: 50.0,
+                      height: 30.0,
                     ),
                     DetailView(snapshot: snapshot),
+                    const SizedBox(
+                      height: 30.0,
+                    ),
+                    BottomListView(snapshot: snapshot),
                   ],
                 );
               } else {

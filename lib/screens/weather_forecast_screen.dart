@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:weather_app/api/weather_api.dart';
-import 'package:weather_app/models/geo_coordinates.dart';
 import 'package:weather_app/models/weather_forecast_daily.dart';
 import 'package:weather_app/widgets/city_view.dart';
+import 'package:weather_app/widgets/temp_view.dart';
 
 class WeatherForecastScreen extends StatefulWidget {
   const WeatherForecastScreen({Key? key}) : super(key: key);
@@ -14,7 +14,6 @@ class WeatherForecastScreen extends StatefulWidget {
 
 class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
   late Future<WeatherForecast> forecastObject;
-  late Future<GeoCoordinates> geo;
 
   final String _cityName = 'London';
 
@@ -55,6 +54,10 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
                       height: 50.0,
                     ),
                     CityView(snapshot: snapshot),
+                    const SizedBox(
+                      height: 5.0,
+                    ),
+                    TempView(snapshot: snapshot),
                   ],
                 );
               } else {

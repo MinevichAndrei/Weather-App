@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:weather_app/api/weather_api.dart';
 import 'package:weather_app/models/weather_forecast_daily.dart';
+import 'package:weather_app/screens/city_creen.dart';
 import 'package:weather_app/widgets/bottom_list_view.dart';
 import 'package:weather_app/widgets/city_view.dart';
 import 'package:weather_app/widgets/detail_view.dart';
@@ -16,7 +19,6 @@ class WeatherForecastScreen extends StatefulWidget {
 
 class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
   late Future<WeatherForecast> forecastObject;
-
   final String _cityName = 'London';
 
   @override
@@ -40,7 +42,22 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
         actions: [
           IconButton(
             icon: const Icon(Icons.location_city),
-            onPressed: () {},
+            onPressed: () async {
+              var tappedName = await Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const CityScreen();
+                  },
+                ),
+              );
+              if (tappedName != null) {
+                var _cityName = tappedName;
+                forecastObject = WeatherApi()
+                    .fetchWeatherForecastWithCity(cityName: _cityName);
+                setState(() {});
+              }
+            },
           ),
         ],
       ),

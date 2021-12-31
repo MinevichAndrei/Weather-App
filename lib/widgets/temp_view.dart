@@ -7,9 +7,10 @@ class TempView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var icon = snapshot.data!.current.weather[0].getIconUrl();
-    var temp = snapshot.data!.current.temp.toStringAsFixed(0);
-    var description = snapshot.data!.current.weather[0].description;
+    var forecastList = snapshot.data!.current;
+    var icon = forecastList.weather[0].getIconUrl();
+    var temp = forecastList.temp.toStringAsFixed(0);
+    var description = forecastList.weather[0].description;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

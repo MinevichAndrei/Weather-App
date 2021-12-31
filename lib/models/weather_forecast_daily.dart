@@ -1,3 +1,5 @@
+import 'package:weather_app/utilities/constants.dart';
+
 class WeatherForecast {
   WeatherForecast({
     required this.lat,
@@ -131,6 +133,10 @@ class Weather {
     _data['description'] = description;
     _data['icon'] = icon;
     return _data;
+  }
+
+  String getIconUrl() {
+    return Constants.weatherImagesUrl + icon + '@2x.png';
   }
 }
 

@@ -6,7 +6,8 @@ class Constants {
   static const String weatherBaseUrlDomain = 'api.openweathermap.org';
   static const String weatherForecastPath = '/data/2.5/onecall';
   static const String geoCoordinatesPath = '/data/2.5/weather';
+  static const String weatherBaseUrlImagesDomain = 'openweathermap.org';
   static const String weatherImagesPath = '/img/wn/';
   static const String weatherImagesUrl =
-      weatherBaseScheme + weatherBaseUrlDomain + weatherImagesPath;
+      weatherBaseScheme + weatherBaseUrlImagesDomain + weatherImagesPath;
 }

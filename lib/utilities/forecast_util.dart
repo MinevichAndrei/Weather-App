@@ -8,6 +8,11 @@ class Util {
     return DateFormat('EEEE, d MMMM y', 'ru-RU').format(dateTime);
   }
 
+  static String getFormattedDateForCard(DateTime dateTime) {
+    initializeDateFormatting();
+    return DateFormat('EEE, d MMM, y', 'ru-RU').format(dateTime);
+  }
+
   static getItem(IconData iconData, int value, String units) {
     return Column(
       children: [

@@ -43,7 +43,7 @@ Widget forecastCard(AsyncSnapshot snapshot, int index) {
                   ),
                   Image.network(
                     icon,
-                    scale: 1.6,
+                    scale: 1.7,
                   ),
                 ],
               ),

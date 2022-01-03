@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/screens/weather_forecast_screen.dart';
+import 'package:weather_app/screens/location_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         Locale('en', ''),
         Locale('ru', ''),
       ],
-      home: const WeatherForecastScreen(),
+      home: const LocationScreen(),
     );
   }
 }

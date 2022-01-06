@@ -2,7 +2,7 @@
 
 Application for getting weather from the цуиsite openweathermap.org
 
-## Give a Star! :star
+## Give a Star! :star:
 
 If you like the project, please consider giving it a star to raise awareness!
 
@@ -21,8 +21,6 @@ class ApiKey {
 ```
 
 Enjoy!
-
-Initializing FlutterFire
 
 [more details](https://openweathermap.org/api)
 

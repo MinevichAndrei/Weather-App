@@ -1,18 +1,26 @@
 # Weather Application
 
-Application for getting weather from the site openweathermap.org
+Application for getting weather from the цуиsite openweathermap.org
 
-## Give a Star! :star:
+## Give a Star! :star
 
 If you like the project, please consider giving it a star to raise awareness!
 
 ## Getting Started
 
-Generating a Firebase project configuration file
+Register and get API key on the website openweathermap.org
 
-Installing your Firebase configuration file
+Create in folder /lib/utilities file api_key.dart
 
-Building for Android
+Paste into the created file:
+
+```dart
+class ApiKey {
+  static const String apiKey = YOUR_API_KEY;
+}
+```
+
+Enjoy!
 
 Initializing FlutterFire
 

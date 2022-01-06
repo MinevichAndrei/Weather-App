@@ -32,7 +32,7 @@ class BottomListView extends StatelessWidget {
             ),
             itemCount: snapshot.data!.daily.length,
             itemBuilder: (context, index) => Container(
-              width: MediaQuery.of(context).size.width / 2.6,
+              width: MediaQuery.of(context).size.width / 2.4,
               color: Colors.lightBlue,
               child: forecastCard(snapshot, index),
             ),

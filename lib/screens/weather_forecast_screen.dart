@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:weather_app/api/weather_api.dart';
@@ -9,9 +11,8 @@ import 'package:weather_app/widgets/detail_view.dart';
 import 'package:weather_app/widgets/temp_view.dart';
 
 class WeatherForecastScreen extends StatefulWidget {
-  const WeatherForecastScreen({Key? key, this.locationWeather})
-      : super(key: key);
-  final locationWeather;
+  const WeatherForecastScreen({Key? key}) : super(key: key);
+  // final locationWeather;
   @override
   _WeatherForecastScreenState createState() => _WeatherForecastScreenState();
 }
@@ -22,9 +23,7 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
   @override
   void initState() {
     super.initState();
-    if (widget.locationWeather != null) {
-      forecastObject = WeatherApi().fetchWeatherForecast();
-    }
+    forecastObject = WeatherApi().fetchWeatherForecast();
   }
 
   @override

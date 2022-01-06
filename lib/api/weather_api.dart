@@ -55,7 +55,6 @@ class WeatherApi {
         Constants.weatherForecastPath, parameters);
 
     var response = await http.get(uri);
-
     if (response.statusCode == 200) {
       return WeatherForecast.fromJson(json.decode(response.body));
     } else {

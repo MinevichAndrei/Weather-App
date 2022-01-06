@@ -1,6 +1,6 @@
 # Weather Application
 
-Application for getting weather from the цуиsite openweathermap.org
+Application for getting weather from the website openweathermap.org
 
 ## Give a Star! :star:
 

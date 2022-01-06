@@ -12,20 +12,18 @@ import 'package:weather_app/widgets/temp_view.dart';
 
 class WeatherForecastScreen extends StatefulWidget {
   const WeatherForecastScreen({Key? key}) : super(key: key);
-
+  // final locationWeather;
   @override
   _WeatherForecastScreenState createState() => _WeatherForecastScreenState();
 }
 
 class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
   late Future<WeatherForecast> forecastObject;
-  final String _cityName = 'London';
 
   @override
   void initState() {
     super.initState();
-    forecastObject =
-        WeatherApi().fetchWeatherForecastWithCity(cityName: _cityName);
+    forecastObject = WeatherApi().fetchWeatherForecast();
   }
 
   @override
@@ -37,7 +35,11 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.my_location),
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              forecastObject = WeatherApi().fetchWeatherForecast();
+            });
+          },
         ),
         actions: [
           IconButton(
@@ -54,7 +56,7 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
               if (tappedName != null) {
                 var _cityName = tappedName;
                 forecastObject = WeatherApi()
-                    .fetchWeatherForecastWithCity(cityName: _cityName);
+                    .fetchWeatherForecast(cityName: _cityName, isCity: true);
                 setState(() {});
               }
             },

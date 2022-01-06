@@ -11,6 +11,9 @@ class TempView extends StatelessWidget {
     var icon = forecastList.weather[0].getIconUrl();
     var temp = forecastList.temp.toStringAsFixed(0);
     var description = forecastList.weather[0].description;
+    if (temp == "-0") {
+      temp = "0";
+    }
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

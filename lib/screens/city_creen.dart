@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class CityScreen extends StatefulWidget {
   const CityScreen({Key? key}) : super(key: key);
@@ -43,12 +42,17 @@ class _CityScreenState extends State<CityScreen> {
                 },
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context, cityName);
-              },
-              child: const Text('Получить погоду',
-                  style: TextStyle(fontSize: 30.0)),
+            SizedBox(
+              height: 50,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context, cityName);
+                },
+                style: ElevatedButton.styleFrom(
+                  textStyle: const TextStyle(fontSize: 30.0),
+                ),
+                child: const Text('Получить погоду'),
+              ),
             ),
           ],
         ),

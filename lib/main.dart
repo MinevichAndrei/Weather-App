@@ -14,10 +14,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      supportedLocales: const [
-        Locale('en', ''),
-        Locale('ru', ''),
-      ],
       home: const WeatherForecastScreen(),
     );
   }

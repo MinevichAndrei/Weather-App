@@ -1,9 +1,9 @@
 # Weather Application
 
-Application for getting weather from the цуиsite openweathermap.org
+Application for getting weather from the website openweathermap.org
 
 <p  align="center">
- <img  src="https://github.com/MinevichAndrei/Weather-App/blob/main/assets/screenshot.png?raw=true"/>
+ <img  src="https://github.com/MinevichAndrei/Weather-App/blob/%2319/assets/screenshot.png?raw=true"/>
  
 </p>
 

@@ -2,6 +2,11 @@
 
 Application for getting weather from the website openweathermap.org
 
+<p  align="center">
+ <img  src="https://github.com/MinevichAndrei/Weather-App/blob/%2319/assets/screenshot.png?raw=true" alt="drawing" width="200"/>
+ 
+</p>
+
 ## Give a Star! :star:
 
 If you like the project, please consider giving it a star to raise awareness!
